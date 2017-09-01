@@ -1,6 +1,6 @@
 /*
  * tmain.cpp
- * TEMPLATE
+ * TEMPLATE mdk v1
  */
 //libraries
 #include <np_module_mdk_v1.h>
