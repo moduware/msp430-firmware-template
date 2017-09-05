@@ -19,4 +19,4 @@ File structure:
     - queue - library file to use with soft_uart_cpp library
 - mdk - folder for mdk library module-gateway communication
 - t_main - main file to write the firmware code
-- t_my_app - file linked to t_main. Use for sending data from the tile to the firmwmare
+- t_my_app - file linked to t_main. Use for sending data from the tile to the firmware
