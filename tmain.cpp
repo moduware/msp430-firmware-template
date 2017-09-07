@@ -1,53 +1,63 @@
-/*
+/**
  * tmain.cpp
  * TEMPLATE mdk v1
+ ***
+ * Library declaration
+ * np_module_mdk_v1 library for module gateway communication
+ * NCN_GPIO library for MSP module pin configuration
+ * remove unused libraries under library folder
+ * add new libraries to use under library folder and link under project properties, declaration bellow
+ * link t_my_app files - file for receive message
  */
-//libraries
 #include <np_module_mdk_v1.h>
 #include "t_my_app.h"
 #include "NCN_GPIO.h"
 
-// RECEIVE command - use range from 0x2700 to 0x27ff
-//**Suggested**
-//odd number for command number
-//even number for response command number
-//define function's command code at t_my_app.c
-
-const MDK_REGISTER_CMD my_cmd_func_table[1] = { //Specify table's length according to used commands
-		{0x2700, my_function_CMD_2700}, 	// Command's denomination can be changed
+/*
+ * receive message(s) Declaration - use range from 0x2700 to 0x27ff
+ * - Specify number of messages (length of the table): MDK_REGISTER_CMD my_cmd_func_table[length]
+ * - Define message - example: {0x2700, SensorValue}
+ */
+const MDK_REGISTER_CMD my_cmd_func_table[1] = {
+		{0x2700, my_function_CMD_2700},
 };
 
+/**
+ * PIN mode and variables initialization, start using libraries
+ * set firmware version: np_api_set_app_version(x, x, x); - optional
+ * set np_api_pm_automode_set() for running no_api_loop() once
+ */
 void np_api_setup() {
-	// Libraries, divers and PIN initialization
-	//np_api_set_app_version(x, x, x); -- optional
-
-	// If the command number is out of the range 0x2700 - 0x27ff, a FAIL message is displayed
-	// Handle the fail event here!
-	if ( np_api_register((MDK_REGISTER_CMD*)my_cmd_func_table, 1) == MDK_REGISTER_FAIL ) { //communication check
+	// receive message range check. Keep structure for receive message event
+	if ( np_api_register((MDK_REGISTER_CMD*)my_cmd_func_table, 1) == MDK_REGISTER_FAIL ) {
 	}
-	// After setting this command, np_api_loop() will run just once
-	//np_api_pm_automode_set();
 }
 
+/**
+ * np_api_loop() runs continuously when the MCU is not on sleep mode - np_api_pm_automode_set() is not set
+ * To exit auto power save mode use np_api_pm_automode_clear()
+ * handle send message function: np_api_upload(messageType, data, length)
+ * send message - use 0x2800
+ * data: unsigned chart - 1byte element, 57 byte max length
+ * length: corresponding to amount of data byte
+ * example: np_api_upload(0x2800, SensorValue, 2)
+ */
 void np_api_loop() {
-	// This loop will run continuously while the MCU is not in sleep mode or has a stop condition
-
-	/*SEND command -- use 0x2800
-	*np_api_upload(0x2800, "I am sensor value!", 2) -- sensor value is unsigned char
-	*
-	*np_api_pm_automode_set(void) -- power save mode
-	**In auto power save mode, the loop runs once
-	*to run it one more time call "np_api_run_loop_once();"
-	*To exit auto power save mode call "np_api_pm_automode_clear()"
-	*delay(10);
-	*/
 	
 }
 
+/*
+ * Start module's function
+ * TODO: example and explanation of the function
+ */
 void np_api_start() {
-	//Start module's function
+
 }
 
+/*
+ *Stop module's function
+ * TODO: example and explanation of the function
+ */
 void np_api_stop() {
-	// Stop module's function
+
 }
