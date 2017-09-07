@@ -1,7 +1,7 @@
 # MSP430 firmware template
 Template for development of firmware on MSP430 development module
 
-To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) V5.5 version or above (Eclispe based IDE, C and C++ used languages)
+To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) V5.5 version or above (Eclipse based IDE, C and C++ used languages)
 
 Recommendation: install 16K FLASH free edition as it is suitable for MSP module projects
 
@@ -19,7 +19,7 @@ File structure:
 - libraries - folder to store existing libraries (click on links for datasheets and additional information)
     - [HC_SR04](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) - library files for ultrasonic sensor HC SR04
     - [I2C](https://learn.sparkfun.com/tutorials/i2c) - library files for I2C communication
-    - LiquidCrystal - library files for LCD 16x02
+    - LiquidCrystal - library files for [LCD 16x02](https://www.sparkfun.com/datasheets/LCD/ADM1602K-NSW-FBS-3.3v.pdf)
     - NCN_GPIO - Library files for General Purpose Input/Output generic pin MSP module configuration
     - soft_uart_cpp - [UART](http://www.simplyembedded.org/tutorials/msp430-uart/) communication simulation
     - queue - [FIFO or queue](http://www.simplyembedded.org/tutorials/interrupt-free-ring-buffer/) library file to use with soft_uart_cpp library
