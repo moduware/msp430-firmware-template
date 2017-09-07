@@ -27,7 +27,7 @@ File structure:
 - t_main - main file to write the firmware code
 - t_my_app - file linked to t_main. Use for sending data from the tile to the firmware
 
-- More information about [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
+Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - TODO: add information about available/used memory on MSP module
 - TODO: Add information about available/used timers and interrupts 
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
