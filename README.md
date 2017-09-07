@@ -1,9 +1,9 @@
 # MSP430 firmware template
 Template for development of firmware on MSP430 development module
 
-To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) V5.5 version or above (Eclipe based IDE, C and C++ used languages)
+To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) V5.5 version or above (Eclispe based IDE, C and C++ used languages)
 
-Recomendation: install 16K FLASH free edition as it is suitable for MSP module projects
+Recommendation: install 16K FLASH free edition as it is suitable for MSP module projects
 
 msp430 firmware template contains the firmware project configuration, libraries for communicating the MSP module to a gateway and additional libraries.
 
@@ -28,9 +28,9 @@ File structure:
 - t_my_app - file linked to t_main. Use for sending data from the tile to the firmware
 
 - More information about [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
-- TODO: add information about avaliable/used memmory on MSP module
-- TODO: Add information about avaliable/used timmers and interrups 
-- TODO: Add information on avaliable modes (master/slave) to use on I2C library on library comments
+- TODO: add information about available/used memory on MSP module
+- TODO: Add information about available/used timers and interrupts 
+- TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about UART speed on library comments 
 
 
