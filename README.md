@@ -31,7 +31,7 @@ Find additional information on [MSP430 architecture](http://www.simplyembedded.o
 - TODO: add information about available/used memory on MSP module
 - TODO: Add information about available/used timers and interrupts 
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
-- TODO: Add information about UART speed on library comments 
+- TODO: Add information about soft UART speed on library comments 
 
 
 

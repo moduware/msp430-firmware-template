@@ -48,15 +48,19 @@ void np_api_loop() {
 
 /*
  * Start module's function
- * TODO: example and explanation of the function
+ * Initialize module application (or sensor, sensor drivers) if needed
+ * Example: Air Contaminants module requires heating before using the sensor
+ * Ethanol_heat_on() - function to start heating the module used under np_api_start() function (see
  */
 void np_api_start() {
 
 }
 
 /*
- *Stop module's function
- * TODO: example and explanation of the function
+ * Stop module's function
+ * Stop module application (or sensor, sensor drivers) if needed
+ * Example: Air Contaminants module has to stop heating function after the module is in LPM or off
+ * Ethanol_heat_off() -
  */
 void np_api_stop() {
 
