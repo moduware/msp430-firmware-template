@@ -38,7 +38,7 @@ void np_api_setup() {
  * np_api_loop() runs continuously when the MCU is not on sleep mode - np_api_pm_automode_set() is not set
  * To exit auto power save mode use np_api_pm_automode_clear()
  * handle send message function: np_api_upload(messageType, data, length)
- * send message - use 0x2800
+ * Send message to tile - use 0x2800
  * data: unsigned chart - 1byte element, 57 byte max length
  * length: corresponding to amount of data byte
  * example: np_api_upload(0x2800, SensorValue, 2)
