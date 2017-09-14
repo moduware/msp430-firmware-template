@@ -1,6 +1,7 @@
 /*
  * t_my_app.c
- * TEMPLATE
+ * msp430 firmware template
+ * Receive messages from tile
  */
 
 #include <np_module_mdk_v1.h>
@@ -8,8 +9,7 @@
 #include "NCN_GPIO.h"
 
 /**
- * Send message
- * receive message - use range from 0x2700 to 0x27ff
+ * Receive message from tile - use range from 0x2700 to 0x27ff
  * - Data: unsigned chart - 1byte element, 57 byte max length
  * acknowledge (ack) message - use range from 0x2700 to 0x27ff
  * - ack Data: unsigned chart - success: 0x00, fail: 0x01

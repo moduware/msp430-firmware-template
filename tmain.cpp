@@ -1,7 +1,8 @@
 /**
- * tmain.cpp
- * TEMPLATE mdk v1
- ***
+ * t_my_app.c
+ * msp430 mdk v1 firmware template
+ * Main
+ **
  * Library declaration
  * np_module_mdk_v1 library for module gateway communication
  * NCN_GPIO library for MSP module pin configuration

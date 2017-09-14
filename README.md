@@ -14,7 +14,7 @@ Absolute minimum files for communication are:
 
 This template also includes default folder and file structure, plus additional related files to make your development process easier and faster. Clone or fork this repository and start your development. Everyone is also welcome to contribute and improve this template, just do a pull request.
 
-File structure:
+## File structure:
 
 - libraries - folder to store existing libraries (click on links for datasheets and additional information)
     - [HC_SR04](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) - library files for ultrasonic sensor HC SR04
@@ -27,11 +27,17 @@ File structure:
 - t_main - main file to write the firmware code
 - t_my_app - file linked to t_main. Use for sending data from the tile to the firmware
 
+## Important
+If the main memory is being erased when flashing MSP module, the bootloader has to be uploaded. Follow this document to restore it 
+
+
 Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - TODO: add information about available/used memory on MSP module
 - TODO: Add information about available/used timers and interrupts 
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
+- TODO: Link to procedure on restoring the bootloader 
+- TODO: Link to description on how to flash the MSP
 
 
 
