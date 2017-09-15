@@ -1,7 +1,7 @@
 # MSP430 firmware template
 Template for development of firmware on MSP430 development module
 
-To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) V5.5 version or above (Eclipse based IDE, C and C++ languages are used)
+To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) latest version (versions supported down to V5.5)
 
 Recommendation: install 16K FLASH free edition as it is suitable for MSP module projects
 
@@ -25,11 +25,12 @@ This template also includes default folder and file structure, plus additional r
     - queue - [FIFO or queue](http://www.simplyembedded.org/tutorials/interrupt-free-ring-buffer/) library file to use with soft_uart_cpp library
 - mdk - folder for mdk library module-gateway communication
 - t_main - main file to write the firmware code
-- t_my_app - file linked to t_main. Use for sending data from the tile to the firmware
+- t_my_app - file linked to t_main. Use for receiving information from the tile to the firmware
+- bootloader_v1.0.1.txt - BSL firmware file to restore bootloader on MSP module
 
-## Important
-If the main memory is being erased when flashing MSP module, the bootloader has to be uploaded. Follow this document to restore it 
-
+## Related links 
+- Restore the bootloader: Follow the steps listed under this documents if the main memory is being erased when flashing MSP module (the MSP module would not be recognized by any gateway)
+- Flash the firmware on MSP module: follow steps listed under this document to upload new firmware to MSP module
 
 Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - TODO: add information about available/used memory on MSP module
@@ -37,7 +38,7 @@ Find additional information on [MSP430 architecture](http://www.simplyembedded.o
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
 - TODO: Link to procedure on restoring the bootloader 
-- TODO: Link to description on how to flash the MSP
+- TODO: Link to description on how to flash the MSP430
 
 
 

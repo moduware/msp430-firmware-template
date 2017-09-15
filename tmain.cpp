@@ -20,7 +20,7 @@
  * - Define message - example: {0x2700, SensorValue}
  */
 const MDK_REGISTER_CMD my_cmd_func_table[1] = {
-		{0x2700, my_function_CMD_2700},
+		{0x2700, receiveOneMessage},
 };
 
 /**
@@ -39,7 +39,7 @@ void np_api_setup() {
  * To exit auto power save mode use np_api_pm_automode_clear()
  * handle send message function: np_api_upload(messageType, data, length)
  * Send message to tile - use 0x2800
- * data: unsigned chart - 1byte element, 57 byte max length
+ * data: unsigned char - 1byte element, 57 byte max length
  * length: corresponding to amount of data byte
  * example: np_api_upload(0x2800, SensorValue, 2)
  */
@@ -51,7 +51,7 @@ void np_api_loop() {
  * Start module's function
  * Initialize module application (or sensor, sensor drivers) if needed
  * Example: Air Contaminants module requires heating before using the sensor
- * Ethanol_heat_on() - function to start heating the module used under np_api_start() function (see
+ * Ethanol_heat_on() - function to start heating the module used under np_api_start()function
  */
 void np_api_start() {
 
@@ -61,7 +61,7 @@ void np_api_start() {
  * Stop module's function
  * Stop module application (or sensor, sensor drivers) if needed
  * Example: Air Contaminants module has to stop heating function after the module is in LPM or off
- * Ethanol_heat_off() -
+ * Ethanol_heat_off() - function to stop the module used under np_api_stop()function
  */
 void np_api_stop() {
 
