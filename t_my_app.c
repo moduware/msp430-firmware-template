@@ -19,9 +19,9 @@
 * rename function(s) according to message definition on tmain
 */
 
-void receiveOneMessage (unsigned char*pData, unsigned char len) {
+void HandleMessageType (unsigned char*pData, unsigned char len) {
 
-	// Feedback to Command 0x2700
-		unsigned char response = 0x00;
-		np_api_upload(0x2701, &response, 1);
+    // Feedback to Command 0x2700
+        unsigned char response = 0x00;
+        np_api_upload(0x2701, &response, 1);
 }

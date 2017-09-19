@@ -8,7 +8,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-void my_function_CMD_2700 (unsigned char*pData, unsigned char len);
+void HandleMessageType (unsigned char*pData, unsigned char len);
 
 #ifdef __cplusplus
 }

@@ -1,7 +1,7 @@
 # MSP430 firmware template
 Template for development of firmware on MSP430 development module
 
-To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS#Code_Composer_Studio_Version_5_Downloads) latest version (versions supported down to V5.5)
+To start up with a MSP module project, download and install [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS) latest version (versions supported down to V5.5)
 
 Recommendation: install 16K FLASH free edition as it is suitable for MSP module projects
 
