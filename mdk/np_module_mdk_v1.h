@@ -7,9 +7,7 @@
 
 #ifndef NP_MODULE_MDK_V1_H_
 #define NP_MODULE_MDK_V1_H_
-#ifdef __cplusplus
-	extern "C" {
-#endif
+
 typedef void (*my_VOID_UCUC)(unsigned char*, unsigned char);
 
 typedef struct {
@@ -19,6 +17,11 @@ typedef struct {
 
 #define MDK_REGISTER_SUCCESS	0x00
 #define MDK_REGISTER_FAIL		0x01
+
+#ifdef __cplusplus
+	extern "C" {
+#endif
+
 
 inline void delay(unsigned int x) {while (x--) __delay_cycles(16000);}
 

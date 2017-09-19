@@ -20,24 +20,24 @@ static unsigned int pwm_clk1 = 99;
 static unsigned char pin_adc[3] = {0x00};
 /*
 *******   Pin list    *******
-** pin ** Port.pin ****** Mode **************
- * 00.		P1.0		ADC							31
- * 01.		P1.6		ADC							21
- * 02.		P1.7		ADC							22
- * 03.		P3.4									14
- * 04.		P3.2		PWM							12
- * 05.		P3.3		PWM							13
- * 06.		P3.5									18
- * 07.		P3.6									19
- * 08.		P2.0		UART_TXO					9
- * 09.		P2.1		UART_RDI					10
- * 10.		P2.2		SPI MISO					11
- * 11.		P2.3		SPI_MOSI					15
- * 12.		P2.4		SPI_CLK						16
- * 13.		P2.5		SPI_CS						17
- * 14.		P2.6		I2C_SCL						26
- * 15.		P2.7		I2C_SDA						25
- ********************************************
+** pin ** Port.pin ******** Mode *************************
+   00.		P1.0		GPIO / ADC						31
+   01.		P1.6		GPIO / ADC / HW_I2C_SCL			21
+   02.		P1.7		GPIO / ADC / HW_I2C_SDA			22
+   03.		P3.4										14
+   04.		P3.2		GPIO / PWM						12
+   05.		P3.3		GPIO / PWM						13
+   06.		P3.5		GPIO 							18
+   07.		P3.6		GPIO 							19
+   08.		P2.0		GPIO / SW_UART_TXO				9
+   09.		P2.1		GPIO / SW_UART_RDI				10
+   10.		P2.2		GPIO / SW_SPI MISO				11
+   11.		P2.3		GPIO / SW_SPI_MOSI				15
+   12.		P2.4		GPIO / SW_SPI_CLK				16
+   13.		P2.5		GPIO / SW_SPI_CS				17
+   14.		P2.6		GPIO / SW_I2C_SCL				26
+   15.		P2.7		GPIO / SW_I2C_SDA				25
+**********************************************************
  */
 void pinMode(unsigned char pin,unsigned char mode) {
 	if(pin >= 16)

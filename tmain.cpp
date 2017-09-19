@@ -14,7 +14,7 @@
 /*
  * Declaration for message function
  */
-void HandleMessageType (unsigned char*pData, unsigned char len);
+void HandleMessageType(unsigned char*pData, unsigned char len);
 
 /*
  * Receive message(s) table declaration - use range from 0x2700 to 0x27ff
@@ -33,6 +33,7 @@ const MDK_REGISTER_CMD message_table[1] = {
 void np_api_setup() {
     // receive message range check. Keep structure for receive message event
     if ( np_api_register((MDK_REGISTER_CMD*)message_table, 1) == MDK_REGISTER_FAIL ) {
+    delay(1);
     }
 }
 
