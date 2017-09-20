@@ -3,12 +3,17 @@
 Download and install latest version of [Code Composer Studio](http://processors.wiki.ti.com/index.php/Download_CCS) (versions supported down to V5.5)
 
 ## Compiling MSP430 firmware
-- Install MSP430 4.2.1 compiler
-    - Open Code Composer Studio and click on *Help > Install New Software...*
+* Install MSP430 4.2.1 compiler
+    * Open Code Composer Studio and click on *Help > Install New Software...*
+    
     ![compiler_instructions_1]
-    - Select *Work With* as image below, search for **MSP430 Compiler Tools 4.2.1** and click on *Next*
+    
+    * Select *Work With* as image below, search for **MSP430 Compiler Tools 4.2.1** and click on *Next*
+    
     ![compiler_instructions_2]
-    - Finish Installation 
+    
+    * Finish Installation 
+    
     ![compiler_instructions3]
 
 ## Flashing Configuration 
