@@ -13,11 +13,15 @@ Download and install latest version of [Code Composer Studio](http://processors.
 
 ## Flashing Configuration 
 - Wire MSP module to MSP-EXP430G2 LaunchPad (Emulation part) and connect LaunchPad to USB
+
 ![MSP-LaunchPad]
 - Make sure *Project>Debug>MSP430 Properties> 
 Project >	Properties	>	Debug	>	MSP430	Properties	>‘Replace written memory locations, retain unwritten memory locations’ is selected*
+
 ![Debug_options]
+
 - Flash the firmware
+
 ![Debug]
 
 ## Important 
