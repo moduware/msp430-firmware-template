@@ -1,26 +1,28 @@
 /**
  * t_my_app.c
  * msp430 mdk v1 firmware template
- * Main
  **
  * Library declaration
  * np_module_mdk_v1 library for module gateway communication
  * NCN_GPIO library for MSP module pin configuration
  * remove unused libraries under library folder
  * add new libraries to use under library folder and link under project properties, declaration bellow
- * link t_my_app files - file for receive message
  */
 #include <np_module_mdk_v1.h>
-#include "t_my_app.h"
 #include "NCN_GPIO.h"
 
 /*
- * receive message(s) Declaration - use range from 0x2700 to 0x27ff
- * - Specify number of messages (length of the table): MDK_REGISTER_CMD my_cmd_func_table[length]
+ * Declaration for message function
+ */
+void HandleMessageType(unsigned char*pData, unsigned char len);
+
+/*
+ * Receive message(s) table declaration - use range from 0x2700 to 0x27ff
+ * - Specify number of messages (length of the table): MDK_REGISTER_CMD message_table[length]
  * - Define message - example: {0x2700, SensorValue}
  */
-const MDK_REGISTER_CMD my_cmd_func_table[1] = {
-		{0x2700, receiveOneMessage},
+const MDK_REGISTER_CMD message_table[1] = {
+        {0x2700, HandleMessageType},
 };
 
 /**
@@ -29,9 +31,10 @@ const MDK_REGISTER_CMD my_cmd_func_table[1] = {
  * set np_api_pm_automode_set() for running no_api_loop() once
  */
 void np_api_setup() {
-	// receive message range check. Keep structure for receive message event
-	if ( np_api_register((MDK_REGISTER_CMD*)my_cmd_func_table, 1) == MDK_REGISTER_FAIL ) {
-	}
+    // receive message range check. Keep structure for receive message event
+    if ( np_api_register((MDK_REGISTER_CMD*)message_table, 1) == MDK_REGISTER_FAIL ) {
+    delay(1);
+    }
 }
 
 /**
@@ -44,7 +47,7 @@ void np_api_setup() {
  * example: np_api_upload(0x2800, SensorValue, 2)
  */
 void np_api_loop() {
-	
+
 }
 
 /*
@@ -53,6 +56,7 @@ void np_api_loop() {
  * Example: Air Contaminants module requires heating before using the sensor
  * Ethanol_heat_on() - function to start heating the module used under np_api_start()function
  */
+
 void np_api_start() {
 
 }
@@ -66,3 +70,21 @@ void np_api_start() {
 void np_api_stop() {
 
 }
+
+/**
+ * Receive message from tile - use range from 0x2700 to 0x27ff
+ * - Data: unsigned chart - 1byte element, 57 byte max length
+ * acknowledge (ack) message - use range from 0x2700 to 0x27ff
+ * - ack Data: unsigned chart - success: 0x00, fail: 0x01
+** Suggested **
+* use odd for receive message - example: 0x2700
+* use even for ack message - example: 0x2701
+*/
+
+void HandleMessageType (unsigned char*pData, unsigned char len) {
+
+    // Feedback to Command 0x2700
+        unsigned char response = 0x00;
+        np_api_upload(0x2701, &response, 1);
+}
+
