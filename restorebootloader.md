@@ -60,7 +60,8 @@ In such cases try folowing:
 - Plug the target usb into another available port.
 - Restart FET pro430.
 
-
+## Useful links
+[Bootloader- Additional information about the bootloader program][boot]
 
 [Connection]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/connection.jpg
 [STEP2]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/step2.png
@@ -74,3 +75,4 @@ In such cases try folowing:
 
 [bootloader]:https://github.com/nexpaq/msp430-firmware-template/blob/master/bootloader_v1.0.1.txt
 [FET430]:https://www.elprotronic.com/productdata
+[boot]:http://www.ti.com/lit/ug/slau319n/slau319n.pdf
