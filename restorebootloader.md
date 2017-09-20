@@ -26,10 +26,28 @@ Connect the MSP430 module with the TI launch pad as per following table and diag
 |         IO          |          RST         |
 |         CLK         |         TEST         |
 
+![Connection]
+### Step 2
+Run the FET Pro430 and load the bootlaoder v 1.0.1.txt file as shown in diagram below. Make sure the
+bootloader file version is the latest i.e. v 1.0.1.
+![STEP2]
+### Step 3
+Go to Setup ! Connection/Device Reset and select the following items:
+![STEP3]
+### Step 4
+Go to Setup ! Lock/ Unlock Setup and select 'Yes'
+![STEP4]
+### Step 5
+Press next to upload the boatloader to the MSP module and wait until the process is finished and the status has updated to 'pass' as shown by the diagram below:
+![STEP5]
 
 
 
-
+[Connection]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/connection.jpg
+[STEP2]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/step2.png
+[STEP3]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/step3.png
+[STEP4]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/step4.png
+[STEP5]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/step5.png
 
 
 
