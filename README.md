@@ -30,7 +30,7 @@ This template also includes default folder and file structure, plus additional r
 
 ## Related links 
 - [Restore the bootloader][bootloader]: Follow the steps listed under this documents if the main memory is being erased(the MSP module would not be recognized by any gateway) when flashing MSP module. 
-- Flash the firmware on MSP module: follow steps listed under this document to upload new firmware to MSP module
+- [Flash the firmware on MSP module][flash]: follow steps listed under this document to upload new firmware to MSP module
 
 Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - TODO: add information about available/used memory on MSP module
@@ -38,10 +38,10 @@ Find additional information on [MSP430 architecture](http://www.simplyembedded.o
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
 - [How to fix the broken MSP430 Bootloader][bootloader] 
-- TODO: Link to description on how to flash the MSP430
+- [Description on how to flash the MSP430][flash]
 
 
 
 [bootloader]:https://github.com/nexpaq/msp430-firmware-template/blob/master/restorebootloader.md
-
+[flash]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/Flashing.md
 
