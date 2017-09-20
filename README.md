@@ -33,7 +33,7 @@ This template also includes default folder and file structure, plus additional r
 - [Flash the firmware on MSP module][flash]: follow steps listed under this document to upload new firmware to MSP module
 
 Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
-- TODO: add information about available/used memory on MSP module
+- [Memory structure(available/used memory) on MSP module][memory]
 - TODO: Add information about available/used timers and interrupts 
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
@@ -44,4 +44,4 @@ Find additional information on [MSP430 architecture](http://www.simplyembedded.o
 
 [bootloader]:https://github.com/nexpaq/msp430-firmware-template/blob/master/restorebootloader.md
 [flash]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/Flashing.md
-
+[memory]:https://github.com/nexpaq/msp430-firmware-template/blob/master/MSP430%20memory%20settings%20.md
