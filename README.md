@@ -30,7 +30,7 @@ This template also includes default folder and file structure, plus additional r
 
 ## Related links 
 - [Restore the bootloader][bootloader]: Follow the steps listed under this documents if the main memory is being erased(the MSP module would not be recognized by any gateway) when flashing MSP module. 
-- [Flash the firmware on MSP module][flash]: follow steps listed under this document to upload new firmware to MSP module
+- [Flash the firmware on MSP module][flash]: Follow steps listed under this document to upload new firmware to MSP module
 
 Find additional information on [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - [Memory structure(available/used memory) on MSP module][memory]
