@@ -28,8 +28,8 @@ Connect the MSP430 module with the TI launch pad as per following table and diag
 
 ![Connection]
 ### Step 2
-Run the FET Pro430 and load the bootlaoder v 1.0.1.txt file as shown in diagram below. Make sure the
-bootloader file version is the latest i.e. v 1.0.1.
+Run the FET Pro430 and load the bootlaoder v1.0.1.txt file as shown in diagram below. Make sure the
+bootloader file version is the latest(v1.0.1).
 ![STEP2]
 ### Step 3
 Go to Setup ! Connection/Device Reset and select the following items:
