@@ -41,9 +41,3 @@ This template also includes default folder and file structure, plus additional r
 - [MSP430 Specifications and datasheet](http://www.ti.com/lit/ds/symlink/msp430g2253.pdf)
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
-
-
-
-
-
-
