@@ -30,6 +30,7 @@ This template also includes default folder and file structure, plus additional r
 - How to Fix broken MSP430 Bootloader: steps and setup on how to restore the BSL 
 - Interrupt vectors and timers MSP430: table on available interrupt vectors and timers 
 - MSP430 memory settings: information about available and used memory
+- Protocol Message Format: message exchange format 
 - bootloader_v1.0.1.txt - BSL firmware file to restore bootloader on MSP430 module
 
 ## Related links 
@@ -37,7 +38,9 @@ This template also includes default folder and file structure, plus additional r
 - [Restore the bootloader on MSP430 module](https://github.com/nexpaq/msp430-firmware-template/blob/master/restorebootloader.md)
 - [MSP430 module memory settings](https://github.com/nexpaq/msp430-firmware-template/blob/master/MSP430%20memory%20settings%20.md) 
 - [Interrupt vectors and timers on MSP430 module](https://github.com/nexpaq/msp430-firmware-template/blob/master/Interrupt%20vectors%20and%20timers%20msp430.md)
+- [Protocol Message Format](https://github.com/nexpaq/msp430-firmware-template/blob/master/Protocol%20Message%20Format.md)
 - [MSP430 architecture](http://www.simplyembedded.org/tutorials/msp430-architecture/)
 - [MSP430 Specifications and datasheet](http://www.ti.com/lit/ds/symlink/msp430g2253.pdf)
+
 - TODO: Add information on available modes (master/slave) to use on I2C library on library comments
 - TODO: Add information about soft UART speed on library comments 
