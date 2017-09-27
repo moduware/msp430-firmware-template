@@ -1,5 +1,4 @@
 /**
- * t_my_app.c
  * msp430 mdk v1 firmware template
  **
  * Library declaration

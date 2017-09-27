@@ -34,9 +34,9 @@ Project >	Properties	>	Debug	>	MSP430	Properties	>‘Replace written memory loca
 
 
 
-[compiler_instructions_1]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/compiler_instructions_1.jpg
-[compiler_instructions_2]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/compiler_instructions_2.jpg
-[compiler_instructions3]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/compiler_instructions3.jpg
-[MSP-LaunchPad]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/MSP-LaunchPad.jpg
-[Debug_options]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/Debug_options.jpg
-[Debug]:https://github.com/nexpaq/msp430-firmware-template/blob/develop/img/Debug.jpg
+[compiler_instructions_1]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/compiler_instructions_1.png
+[compiler_instructions_2]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/compiler_instructions_2.png
+[compiler_instructions3]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/compiler_instructions3.png
+[MSP-LaunchPad]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/connection.jpg
+[Debug_options]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/Debug_options.png
+[Debug]:https://github.com/nexpaq/msp430-firmware-template/blob/master/Images/Debug.jpg
