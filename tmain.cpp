@@ -8,20 +8,26 @@
  * add new libraries to use under library folder and link under project properties, declaration bellow
  */
 #include <np_module_mdk_v1.h>
+#include "t_my_app.h"
 #include "NCN_GPIO.h"
+#include "LiquidCrystal.h"
+#include "I2C.h"
 
+#define length 2
 /*
  * Declaration for message function
  */
-void HandleMessageType(unsigned char*pData, unsigned char len);
+void LineText1(unsigned char*pData, unsigned char len);
+void LineText2(unsigned char*pData, unsigned char len);
 
 /*
  * Receive message(s) table declaration - use range from 0x2700 to 0x27ff
  * - Specify number of messages (length of the table): MDK_REGISTER_CMD message_table[length]
  * - Define message - example: {0x2700, SensorValue}
  */
-const MDK_REGISTER_CMD message_table[1] = {
-        {0x2700, HandleMessageType},
+const MDK_REGISTER_CMD message_table[length] = {
+        {0x2700, LineText1},
+        {0x2700, LineText2}
 };
 
 /**
@@ -31,9 +37,12 @@ const MDK_REGISTER_CMD message_table[1] = {
  */
 void np_api_setup() {
     // receive message range check. Keep structure for receive message event
-    if ( np_api_register((MDK_REGISTER_CMD*)message_table, 1) == MDK_REGISTER_FAIL ) {
+    if ( np_api_register((MDK_REGISTER_CMD*)message_table, length) == MDK_REGISTER_FAIL ) {
     delay(1);
     }
+
+
+
 }
 
 /**
@@ -46,6 +55,8 @@ void np_api_setup() {
  * example: np_api_upload(0x2800, SensorValue, 2)
  */
 void np_api_loop() {
+
+
 
 }
 
@@ -68,6 +79,8 @@ void np_api_start() {
  */
 void np_api_stop() {
 
+
+
 }
 
 /**
@@ -80,10 +93,39 @@ void np_api_stop() {
 * use even for ack message - example: 0x2701
 */
 
-void HandleMessageType (unsigned char*pData, unsigned char len) {
+void LineText1 (unsigned char*pData, unsigned char len) {
+    int i =0;
+    for(i = 0  ; i < len; i++) {
+        apptext_1[i] = pData[i];                        //Write pData from app and write to apptext array
+        }
+    if(len < 16) {
+        for(i = len  ; i < 16; i++) {
+            apptext_1[i] = 0x20;                        //Write space character to columns without data from app
+            }
+    }
+    LCD_SetCursor(0, 0);                                //Set cursor on column and line 0
+    LCD_Write_Byte(apptext_1,16);                       //Write apptext_1 array to LCD
 
-    // Feedback to Command 0x2700
-        unsigned char response = 0x00;
-        np_api_upload(0x2701, &response, 1);
+    // Feedback to Command 0x2701
+    unsigned char response = 0x00;
+    np_api_upload(0x2701, &response, 1);
+}
+
+void LineText2 (unsigned char*pdata, unsigned char len) {
+    int i =0;
+    for(i = 0  ; i < len; i++){
+        apptext_2[i] = pData[i];
+    }
+    if(len < 16){
+        for(i = len  ; i < 16; i++){
+            apptext_2[i] = 0x20;
+        }
+    }
+    LCD_SetCursor(0, 1);
+    LCD_Write_Byte(apptext_2,16);
+
+    // Feedback to Command 0x2701
+    unsigned char response = 0x00;
+    np_api_upload(0x2701, &response, 1);
 }
 

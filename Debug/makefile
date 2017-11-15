@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := D:/ti/ccsv7/tools/compiler/msp430_4.2.1
+CG_TOOL_ROOT := C:/ti/ccsv7/tools/compiler/msp430_4.2.1
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -12,11 +12,13 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./t_my_app.obj" \
 "./tmain.obj" \
+"./libraries/I2C.obj" \
+"./libraries/LiquidCrystal.obj" \
 "./libraries/NCN_GPIO.obj" \
 "../lnk_msp430g2553.cmd" \
 "../mdk/np_module_mdk_v1.lib" \
 $(GEN_CMDS__FLAG) \
--l"D:/GitHub/msp430-firmware-template/mdk/np_module_mdk_v1.lib" \
+-l"C:/Users/IBM/Documents/GitHub/msp430-firmware-template/mdk/np_module_mdk_v1.lib" \
 -llibc.a \
 
 -include ../makefile.init
@@ -141,7 +143,7 @@ all: msp430-firmware-template.out
 msp430-firmware-template.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MSP430 Linker'
-	"D:/ti/ccsv7/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --advice:power="all" -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"msp430-firmware-template.map" --heap_size=80 --stack_size=80 -i"D:/ti/ccsv7/ccs_base/msp430/include" -i"D:/GitHub/msp430-firmware-template/mdk" -i"D:/GitHub/msp430-firmware-template" -i"D:/GitHub/msp430-firmware-template/libraries" -i"D:/ti/ccsv7/tools/compiler/msp430_4.2.1/lib" -i"D:/ti/ccsv7/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="msp430-firmware-template_linkInfo.xml" --rom_model -o "msp430-firmware-template.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv7/tools/compiler/msp430_4.2.1/bin/cl430" -vmsp --abi=eabi --advice:power="all" -g --define=__MSP430G2553__ --diag_warning=225 --display_error_number --diag_wrap=off --printf_support=minimal -z -m"msp430-firmware-template.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/Users/IBM/Documents/GitHub/msp430-firmware-template/mdk" -i"C:/Users/IBM/Documents/GitHub/msp430-firmware-template" -i"C:/Users/IBM/Documents/GitHub/msp430-firmware-template/libraries" -i"C:/ti/ccsv7/tools/compiler/msp430_4.2.1/lib" -i"C:/ti/ccsv7/tools/compiler/msp430_4.2.1/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="msp430-firmware-template_linkInfo.xml" --rom_model -o "msp430-firmware-template.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -149,15 +151,15 @@ msp430-firmware-template.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "t_my_app.obj" "tmain.obj" "libraries\NCN_GPIO.obj" 
+	-$(RM) "t_my_app.obj" "tmain.obj" "libraries\I2C.obj" "libraries\LiquidCrystal.obj" "libraries\NCN_GPIO.obj" 
 	-$(RM) "t_my_app.d" "libraries\NCN_GPIO.d" 
-	-$(RM) "tmain.d" 
+	-$(RM) "tmain.d" "libraries\I2C.d" "libraries\LiquidCrystal.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
 post-build:
 	-@echo 'Create flash image: TI-TXT'
-	-"D:/ti/ccsv7/tools/compiler/msp430_4.2.1/bin/hex430" --ti_txt "msp430-firmware-template.out" -o "msp430-firmware-template.txt" -order MS -romwidth 16
+	-"C:/ti/ccsv7/tools/compiler/msp430_4.2.1/bin/hex430" --ti_txt "msp430-firmware-template.out" -o "msp430-firmware-template.txt" -order MS -romwidth 16
 	-@echo ' '
 
 .PHONY: all clean dependents
