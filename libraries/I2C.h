@@ -25,7 +25,7 @@ public:
 	 * sent to register:	Reg
 	 * sent data address:	data
 	 * sent data length:	len 	(must <= 16)*/
-	void I2C_Tx(unsigned char Reg, unsigned char data, unsigned char len);
+	void I2C_Tx(unsigned char Reg,unsigned char data[],unsigned char len);
 	/* Receive the data by I2C,
 	 * receive from register:		Reg
 	 * receive data store address:	data

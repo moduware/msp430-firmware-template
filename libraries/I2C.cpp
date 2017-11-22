@@ -53,25 +53,28 @@ void I2C_class::begin(unsigned char slave_address){
 void I2C_class::change_Slave(unsigned char add){
 	UCB0I2CSA = add;
 }
-void I2C_class::I2C_Tx(unsigned char Reg, unsigned char data, unsigned char len){ // reg is adddress, data is actual data, length is data length
-	stop_flag = 0;
-	IICTimerOutCnt = 0x00;
-	while( (UCB0STAT & UCBBUSY) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT));
-	IICTimerOutCnt = 0;
-	I2C_WriteMode();
-	TxBuf[len]=Reg;
-	TxBuf[len-1] = data;
-	TxByteCtr=len+1;                       	// Load TX byte counter
-	IICFinishflag = 0x00;
-	UCB0CTL1 |= UCTR + UCTXSTT;                 // I2C TX, start condition
-	stop_flag = 1;
+void I2C_class::I2C_Tx(unsigned char Reg,unsigned char data[],unsigned char len){
+    unsigned char i = 0;
+    stop_flag = 0;
+    IICTimerOutCnt = 0x00;
+    while( (UCB0STAT & UCBBUSY) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT));
+    IICTimerOutCnt = 0;
+    I2C_WriteMode();
+    TxBuf[len]=Reg;
+    for(i = 0;i < len;i ++){
+        TxBuf[len-1-i] = data[i];
+    }
+    TxByteCtr=len+1;                        // Load TX byte counter
+    IICFinishflag = 0x00;
+    UCB0CTL1 |= UCTR + UCTXSTT;                 // I2C TX, start condition
+    stop_flag = 1;
 
-	while((IICFinishflag == 0x00) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT)){	//  while (UCB0CTL1 & UCTXSTT);
-	}
-	IICTimerOutCnt = 0x00;
+    while((IICFinishflag == 0x00) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT)){ //  while (UCB0CTL1 & UCTXSTT);
+    }
+    IICTimerOutCnt = 0x00;
 
-	while ((UCB0CTL1 & UCTXSTP) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT));
-	IICTimerOutCnt = 0;
+    while ((UCB0CTL1 & UCTXSTP) && (IICTimerOutCnt ++ <= IIC_TIMER_OUT));
+    IICTimerOutCnt = 0;
 }
 void I2C_class::I2C_Rx(unsigned char Reg,unsigned char data[],unsigned char len){
 	unsigned char i = 0;

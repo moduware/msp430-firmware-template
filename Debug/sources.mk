@@ -107,6 +107,8 @@ PDE_DEPS__QUOTED :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
+Lcd\ updated/library \
+Lcd\ updated \
 libraries \
 mdk \
 

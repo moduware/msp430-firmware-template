@@ -10,8 +10,11 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./main.obj" \
 "./t_my_app.obj" \
 "./tmain.obj" \
+"./Lcd updated/library/gpio.obj" \
+"./Lcd updated/main.obj" \
 "./libraries/I2C.obj" \
 "./libraries/LiquidCrystal.obj" \
 "./libraries/NCN_GPIO.obj" \
@@ -29,9 +32,13 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include Lcd\ updated/library/subdir_vars.mk
+-include Lcd\ updated/subdir_vars.mk
 -include libraries/subdir_vars.mk
 -include mdk/subdir_vars.mk
 -include subdir_rules.mk
+-include Lcd\ updated/library/subdir_rules.mk
+-include Lcd\ updated/subdir_rules.mk
 -include libraries/subdir_rules.mk
 -include mdk/subdir_rules.mk
 -include objects.mk
@@ -151,9 +158,9 @@ msp430-firmware-template.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "t_my_app.obj" "tmain.obj" "libraries\I2C.obj" "libraries\LiquidCrystal.obj" "libraries\NCN_GPIO.obj" 
-	-$(RM) "t_my_app.d" "libraries\NCN_GPIO.d" 
-	-$(RM) "tmain.d" "libraries\I2C.d" "libraries\LiquidCrystal.d" 
+	-$(RM) "main.obj" "t_my_app.obj" "tmain.obj" "Lcd updated\library\gpio.obj" "Lcd updated\main.obj" "libraries\I2C.obj" "libraries\LiquidCrystal.obj" "libraries\NCN_GPIO.obj" 
+	-$(RM) "t_my_app.d" "Lcd updated\library\gpio.d" "libraries\NCN_GPIO.d" 
+	-$(RM) "main.d" "tmain.d" "Lcd updated\main.d" "libraries\I2C.d" "libraries\LiquidCrystal.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
